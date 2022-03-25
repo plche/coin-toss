@@ -20,10 +20,10 @@ function getFiveHeads() {
 
 const fiveHeadsPromise = new Promise((resolve, reject) => {
     let attempts = getFiveHeads();
-    if (attempts > 0) {
+    if (attempts > 0 && attempts < 101) {
         resolve(`It took ${attempts} tries to flip five "heads"`);
     } else {
-        reject(`Can't get to flip five "heads"`);
+        reject(`Can't get to flip five "heads" in less than 100 tries`);
     }
 });
 
